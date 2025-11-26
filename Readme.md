@@ -4,13 +4,13 @@ Using Machine Learning to Predict Customer Term Deposit Subscription
 
 ---
 
-## ** Project Summary**
+## **Project Summary**
 
 This project analyzes the **Bank Marketing Dataset** from the UCI Machine Learning Repository to predict whether a client will subscribe to a **term deposit** after a direct marketing campaign. Using statistical exploration and machine learning models, this project aims to identify key customer patterns and improve marketing decision-making.
 
 ---
 
-## ** Objectives**
+## **Objectives**
 
 * Understand the structure, distribution, and characteristics of client, campaign, and economic features.
 * Perform data cleaning, preprocessing, and exploratory data analysis (EDA).
@@ -20,7 +20,7 @@ This project analyzes the **Bank Marketing Dataset** from the UCI Machine Learni
 
 ---
 
-## ** Dataset Description**
+## **Dataset Description**
 
 This project uses the **Bank Marketing Dataset** from the **UCI Machine Learning Repository**.
 
@@ -64,7 +64,7 @@ UCI Machine Learning Repository
 
 ---
 
-## **🛠️ Tools and Libraries**
+## **Tools and Libraries**
 
 ### **Programming Language**
 
