@@ -2,6 +2,8 @@
 
 Using Machine Learning to Predict Customer Term Deposit Subscription
 
+by **Benji Dau** (UID010044292)
+
 ---
 
 ## **Project Summary**
@@ -76,7 +78,8 @@ UCI Machine Learning Repository
 * **Pandas** – data manipulation
 * **Matplotlib / Seaborn** – data visualization
 * **Scikit-Learn** – machine learning models & preprocessing
-* **Joblib** – model saving
+* **Pytorch** - deep learning package to build neural networks 
+* **SHAP** - explain the output of machine learning model 
 * **Jupyter Notebook** – development environment
 
 ### **Machine Learning Techniques**
@@ -86,3 +89,133 @@ UCI Machine Learning Repository
 * Random Forest
 * Gradient Boosting (XGBoost / LightGBM optional)
 * Hyperparameter tuning using GridSearchCV
+
+## The final report
+
+The PDF file for final project: [Final Report](reports/ISOM835 Final Report - Benji.pdf)
+
+## Link to Colab Notebook
+
+[Colab Notebook](https://colab.research.google.com/drive/1p-rFkB44KdSyFoYSB4FExIRlCYahRyZp?usp=sharing)
+
+## Instructions 
+
+Follow the steps below to reproduce the full end-to-end analysis, from data loading to model training, evaluation, and interpretation.
+
+
+## **1. Open the Google Colab Notebook**
+
+The full workflow is implemented in a single Colab notebook.
+
+**Open notebook:**
+`https://colab.research.google.com/drive/1p-rFkB44KdSyFoYSB4FExIRlCYahRyZp?usp=sharing`
+
+* copy to your Google Drive if applicable
+
+## **2. Run All Cells (Recommended)**
+
+In Colab:
+
+**Runtime → Run all**
+
+The notebook automatically performs:
+
+* Data loading
+* Data inspection and EDA
+* Preprocessing & feature engineering
+* Model training (Logistic Regression, Random Forest, XGBoost, MLP)
+* Hyperparameter tuning
+* SHAP interpretability
+* Business insights & recommendations
+
+All required libraries are installed within the notebook
+
+## **3. Dataset Loading (Automatic)**
+
+No manual download is required.
+
+Running the notebook executes:
+
+```python
+from ucimlrepo import fetch_ucirepo
+bank_marketing = fetch_ucirepo(id=222)
+X = bank_marketing.data.features
+y = bank_marketing.data.targets
+```
+
+
+## **4. Data Preprocessing Pipeline**
+
+Executing the preprocessing section will:
+
+- Handle missing values
+- Encode categorical features (One-Hot + Label Encoding)
+- Normalize numerical features
+- Engineer new features (date, weekend flag, age groups)
+- Remove leakage variables (duration, balance)
+- Create a stratified train/test split
+
+No manual steps are needed.
+
+## **5. Train the Machine Learning Models**
+
+The notebook automatically trains:
+
+* Logistic Regression
+* Random Forest
+* XGBoost (baseline and tuned)
+
+To evaluate a model, the notebook runs commands like:
+
+```python
+evaluate_model("XGBoost", xgb_wrapper, X_test, y_test)
+```
+
+Metrics are printed directly in the output.
+
+---
+
+## **6. Interpret the Model with SHAP**
+
+SHAP visualizations are generated automatically:
+
+* SHAP summary plot (beeswarm)
+* Per-feature impact
+* Feature importance (Gain)
+
+Example code executed:
+
+```python
+explainer = shap.TreeExplainer(xgb_best)
+shap_values = explainer.shap_values(X_test)
+shap.summary_plot(shap_values, X_test)
+```
+
+## **7. Train Neural Network Models (Optional)**
+
+Two PyTorch models are included:
+
+1. **Original MLP** (unweighted BCE)
+2. **Weighted MLP** (BCEWithLogitsLoss + pos_weight)
+
+Simply run the NN section to:
+
+* Train the models
+* View loss curves
+* Evaluate accuracy, precision, recall, F1
+* Generate ROC-AUC plots
+
+No additional configuration required.
+
+
+## **8. Review Final Outputs**
+
+At the end of the notebook, you will find:
+
+- Model comparison tables
+- Best-performing model summary
+- Customer behavior insights
+- Marketing recommendations
+- Ethical and Responsible AI reflections
+
+These outputs generate automatically when you run all cells.
