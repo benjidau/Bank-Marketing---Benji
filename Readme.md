@@ -92,7 +92,7 @@ UCI Machine Learning Repository
 
 ## The final report
 
-The PDF file for final project: [Final Report](reports/ISOM835 Final Report - Benji.pdf)
+The PDF file for final project: [Final Report](https://github.com/benjidau/Bank-Marketing---Benji/blob/main/reports/ISOM835%20Final%20Report%20-%20Benji.pdf)
 
 ## Link to Colab Notebook
 
